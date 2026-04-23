@@ -1,0 +1,108 @@
+﻿/* Fondo general */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+/* Centrado total */
+.success-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+/* Card principal */
+.success-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Título */
+.success-title {
+    font-size: 18px;
+    color: #0277bd;
+    margin-bottom: 20px;
+}
+
+/* Caja del link */
+.link-box {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+/* Label */
+.link-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Fila input + botón */
+.link-row {
+    display: flex;
+    gap: 10px;
+}
+
+/* Input */
+.link-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+    .link-input:focus {
+        outline: none;
+        border-color: #4fc3f7;
+    }
+
+/* Botón copiar */
+.btn-copy {
+    background: #4fc3f7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+    .btn-copy:hover {
+        background: #29b6f6;
+        transform: translateY(-1px);
+    }
+
+/* Mensaje */
+.copy-message {
+    display: none;
+    margin-top: 10px;
+    color: #2e7d32;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .success-card {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .link-row {
+        flex-direction: column;
+    }
+
+    .btn-copy {
+        width: 100%;
+    }
+}

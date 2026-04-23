@@ -1,0 +1,114 @@
+﻿/* Fondo general */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+/* Contenedor principal */
+.form-encuesta {
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+    /* Títulos */
+    .form-encuesta h2 {
+        text-align: center;
+        color: #0277bd;
+        margin-bottom: 5px;
+    }
+
+    .form-encuesta p {
+        text-align: center;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    /* Separador */
+    .form-encuesta hr {
+        border: none;
+        border-top: 1px solid #eee;
+        margin-bottom: 20px;
+    }
+
+/* Bloque de pregunta */
+.pregunta {
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+    /* Label */
+    .pregunta label {
+        font-weight: 600;
+        color: #333;
+    }
+
+/* Asterisco requerido */
+.requerido {
+    color: #e53935;
+    margin-left: 5px;
+}
+
+/* Inputs */
+.form-control,
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border 0.2s;
+}
+
+    .form-control:focus,
+    input:focus {
+        outline: none;
+        border-color: #4fc3f7;
+    }
+
+/* Botón */
+.btn-enviar {
+    width: 100%;
+    margin-top: 15px;
+    background: #4fc3f7;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+    /* Hover */
+    .btn-enviar:hover {
+        background: #29b6f6;
+        transform: translateY(-1px);
+    }
+
+/* Mensaje */
+.alert {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    background: #ffebee;
+    color: #c62828;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .form-encuesta {
+        margin: 20px;
+        padding: 20px;
+    }
+}

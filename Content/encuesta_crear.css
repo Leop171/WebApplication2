@@ -1,0 +1,133 @@
+﻿/* Fondo */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+.survey-container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.survey-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.survey-title {
+    color: #0277bd;
+    margin: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.input-text {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border 0.2s;
+}
+
+    .input-text:focus {
+        outline: none;
+        border-color: #4fc3f7;
+    }
+
+.questions-section {
+    margin-top: 20px;
+}
+
+.section-title {
+    color: #0277bd;
+    margin-bottom: 10px;
+}
+
+.question-card {
+    border: 1px solid #e0e0e0;
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.options-group {
+    margin: 10px 0;
+    display: flex;
+    gap: 15px;
+}
+
+.checkbox-label {
+    display: block;
+    margin: 10px 0;
+}
+
+.btn-add {
+    background: #4fc3f7;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+    .btn-add:hover {
+        background: #29b6f6;
+    }
+
+.btn-delete {
+    background: #e57373;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+    .btn-delete:hover {
+        background: #ef5350;
+    }
+
+.btn-submit {
+    background: #4fc3f7;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+    .btn-submit:hover {
+        background: #29b6f6;
+        transform: translateY(-1px);
+    }
+
+.alert {
+    background: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+
+@media (max-width: 600px) {
+    .survey-container {
+        margin: 20px;
+        padding: 20px;
+    }
+}

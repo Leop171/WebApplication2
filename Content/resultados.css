@@ -1,0 +1,119 @@
+﻿body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+
+.contenedor {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+    .contenedor h2 {
+        text-align: center;
+        color: #0277bd;
+        margin-bottom: 25px;
+    }
+
+.encuesta {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+    .header strong {
+        color: #333;
+        font-size: 16px;
+    }
+
+/
+.btn {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 5px;
+    transition: all 0.2s;
+}
+
+.btn-ver {
+    background: #4fc3f7;
+    color: white;
+}
+
+    .btn-ver:hover {
+        background: #29b6f6;
+        transform: translateY(-1px);
+    }
+
+.btn-eliminar {
+    background: #e57373;
+    color: white;
+}
+
+    .btn-eliminar:hover {
+        background: #ef5350;
+    }
+
+.detalle {
+    margin-top: 15px;
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+    table th {
+        background: #e1f5fe;
+        color: #0277bd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    table td {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    table tr:hover td {
+        background: #f9f9f9;
+    }
+
+@media (max-width: 600px) {
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .header div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+    .btn {
+        width: 100%;
+    }
+
+    table th, table td {
+        font-size: 13px;
+        padding: 8px;
+    }
+}
