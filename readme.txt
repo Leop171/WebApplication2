@@ -54,7 +54,7 @@ Aplicación web desarrollada en ASP.NET MVC5 que permite a los usuarios crear, a
 ### Clonar el repositorio
 
 ```bash
-git clone https://github.com/Leop171/ACME.git
+git clone https://github.com/Leop171/WebApplication.git
 ```
 
 ---
