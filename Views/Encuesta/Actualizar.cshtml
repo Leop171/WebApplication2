@@ -1,0 +1,37 @@
+﻿@model WebApplication1.Models.EncuestaEditarDTO
+
+<link href="@Url.Content("~/Content/encuesta_editar.css")" rel="stylesheet" />
+
+<div class="edit-container">
+
+    <h2>Editar Encuesta</h2>
+
+    <form method="post" action="@Url.Action("Actualizar","Encuesta")">
+
+        @Html.HiddenFor(m => m.CodigoUnico)
+
+        <div class="form-group">
+            <label>Nombre</label>
+            @Html.TextBoxFor(m => m.Nombre, new { @class = "input-text" })
+        </div>
+
+        <div class="form-group">
+            <label>Descripción</label>
+            @Html.TextBoxFor(m => m.Descripcion, new { @class = "input-text" })
+        </div>
+
+        <input type="hidden" name="codigoEncuesta" value="@Request.QueryString["codigoEncuesta"]" />
+        <button type="submit" class="btn-submit" name="accion" value="enviar">
+            Guardar cambios
+        </button>
+
+        @if (ViewBag.Mensaje != null)
+        {
+            <div class="alert">
+                @ViewBag.Mensaje
+            </div>
+        }
+
+    </form>
+
+</div>

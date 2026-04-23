@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/Content/encuesta_link.css")" rel="stylesheet" />
+    <title>Encuesta Creada</title>
+</head>
+<body>
+
+    <div class="success-wrapper">
+
+        <div class="success-card">
+
+            <p class="success-title">
+                <b>¡Listo!</b> Encuesta creada
+            </p>
+
+            @if (ViewBag.Mensaje != null)
+            {
+                <div class="link-box">
+
+                    <label class="link-label">Enlace de la encuesta:</label>
+
+                    <div class="link-row">
+
+                        <input type="text"
+                               id="linkEncuesta"
+                               value="@ViewBag.Mensaje"
+                               readonly
+                               class="link-input" />
+
+                        <button type="button"
+                                onclick="copiarLink()"
+                                class="btn-copy">
+                            Copiar
+                        </button>
+
+                    </div>
+
+                    <span id="mensajeCopiado" class="copy-message">
+                        ✔ Copiado al portapapeles
+                    </span>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+    <script src="@Url.Content("~/Scripts/utiles.js")"></script>
+
+
+</body>
+</html>

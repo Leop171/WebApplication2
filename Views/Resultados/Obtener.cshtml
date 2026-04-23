@@ -1,0 +1,97 @@
+﻿@model List<WebApplication1.Models.ResultadoDTO>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/Content/resultados.css")" rel="stylesheet" />
+    <title>Resultados</title>
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <h2>Resultados de Encuestas</h2>
+
+        @{
+            var encuestas = Model.GroupBy(x => x.NombreEncuesta);
+        }
+
+
+        @foreach (var encuesta in encuestas)
+        {
+            var id = "encuesta_" + encuesta.Key.Replace(" ", "");
+
+            <div class="encuesta">
+
+                <div class="header">
+                    <strong>@encuesta.Key</strong>
+
+
+                    <div>
+                        <button class="btn btn-ver" onclick="toggleDetalle('@id')">
+                            Ver detalles
+                        </button>
+
+                        <form method="post" action="@Url.Action("Borrar", "Encuesta")" style="display:inline;">
+                            <input type="hidden" name="codigoEncuesta" value="@encuesta.First().CodigoEncuesta" />
+                            <button type="submit" class="btn btn-eliminar">
+                                Eliminar
+                            </button>
+                        </form>
+
+                        <form method="get" action="@Url.Action("Actualizar", "Encuesta")" style="display:inline;">
+                            <input type="hidden" name="codigoEncuesta" value="@encuesta.First().CodigoEncuesta" />
+                            <button type="submit" class="btn btn-ver">
+                                Actualizar
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div id="@id" class="detalle">
+
+                    <table>
+                        <tr>
+                            <th>Pregunta</th>
+                            <th>Respuesta</th>
+                        </tr>
+
+                        @foreach (var item in encuesta)
+                        {
+                            <tr>
+                                <td>@item.TituloCampos</td>
+                                <td>@item.Resultado</td>
+                            </tr>
+                        }
+
+                    </table>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+
+    <script>
+        function toggleDetalle(id) {
+            var div = document.getElementById(id);
+
+            if (div.style.display === "none" || div.style.display === "") {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        }
+    </script>
+
+
+</body>
+</html>
+

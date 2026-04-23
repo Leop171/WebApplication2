@@ -1,0 +1,73 @@
+﻿@{
+    @model WebApplication1.Models.EncuestaVM
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/Content/encuesta_responder.css")" rel="stylesheet" />
+    <title>ResponderEncuesta</title>
+</head>
+<body>
+
+    <div class="form-encuesta">
+
+        <h2>@Model.Nombre</h2>
+        <p>@Model.Descripcion</p>
+
+        <hr />
+
+        <form method="post" action="@Url.Action("Responder","Encuesta")">
+
+            @Html.Hidden("link", Request.RequestContext.RouteData.Values["enlace"])
+            @Html.HiddenFor(m => m.Codigo)
+
+            @for (int i = 0; i < Model.Preguntas.Count; i++)
+            {
+                <div class="pregunta">
+
+                    <label>
+                        @Model.Preguntas[i].Nombre
+                        @if (Model.Preguntas[i].Requerido)
+                        {
+                            <span class="requerido">*</span>
+                        }
+                    </label>
+
+
+                    @Html.HiddenFor(m => m.Preguntas[i].Codigo)
+
+                    <input type="hidden" name="Preguntas[i].Codigo" value="@Model.Preguntas[i].Codigo" />
+
+                    @if (Model.Preguntas[i].Tipo == "texto")
+                    {
+                        @Html.TextBox($"Preguntas[{i}].Respuesta", null, new { @class = "form-control" })
+                    }
+                    else if (Model.Preguntas[i].Tipo == "numero")
+                    {
+                        @Html.TextBox($"Preguntas[{i}].Respuesta", null, new { type = "number" })
+                    }
+                    else if (Model.Preguntas[i].Tipo == "fecha")
+                    {
+                        @Html.TextBox($"Preguntas[{i}].Respuesta", null, new { type = "date" })
+                    }
+
+                </div>
+            }
+
+            <button type="submit" class="btn-enviar" name="accion" value="enviar">Enviar respuestas</button>
+
+            @if (ViewBag.Mensaje != null)
+            {
+                <div class="alert-success">
+                    @ViewBag.Mensaje
+                </div>
+            }
+        </form>
+    </div>
+    <script src="@Url.Content("~/Scripts/validaciones.js")"></script>
+</body>
+</html>

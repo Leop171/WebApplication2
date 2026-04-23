@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="@Url.Content("~/Content/menu_superior.css")" rel="stylesheet" />
+    <title>Registrar Encuesta</title>
+</head>
+<body>
+    <nav class="barra-superior">
+        <div class="container">
+            @Html.ActionLink("Acme", "Login", "Inicio", new { area = "" }, new { @class = "navbar-brand" })
+
+            <div class="contenedor-secciones">
+                <ul class="lista-secciones">
+                    <li>@Html.ActionLink("Resultados", "Obtener", "Resultados", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Cerrar Session", "CerrarSession", "Encuesta", new { area = "" }, new { @class = "nav-link" })</li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+
+</body>
+</html>
+

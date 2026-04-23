@@ -1,0 +1,79 @@
+﻿﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registrar</title>
+    <link href="@Url.Content("~/Content/inicio.css")" rel="stylesheet" />
+</head>
+<body>
+    <div class="row justify-content-center mt-5">
+
+        <div class="col-5">
+
+            <div class="card">
+                <div class="card-header"><h3 class="text-center">Registrar cuenta</h3></div>
+                <div class="card-body">
+
+                    @if (ViewBag.Creado == null)
+                    {
+                        <form action="@Url.Action("Registrar","Inicio")" method="post">
+
+                            <div class="mb-3">
+                                <label>Nombre</label>
+                                <input type="text" id="nombre" class="form-control" name="Nombre"
+                                       value="@(ViewBag.Nombre != null ? ViewBag.Nombre : "")" required />
+                                <small id="errorNombre" class="error-text"></small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Contraseña</label>
+                                <input type="password" id="clave" class="form-control" name="Clave" required />
+                                <small id="errorClave" class="error-text"></small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Confirmar Contraseña</label>
+                                <input type="password" id="confirmarClave" class="form-control" name="ConfirmarClave" required />
+                                <small id="errorConfirmar" class="error-text"></small>
+                            </div>
+
+                            @if (ViewBag.Mensaje != null)
+                            {
+                                <div class="alert-success">
+                                    @ViewBag.Mensaje
+                                </div>
+                            }
+
+                            <div class="mb-3">
+                                <div class="d-grid">
+                                    <button class="btn btn-primary" type="submit" onclick="return validarRegistro()">Registrarse </button>
+                                    <a class="btn btn-link" href="@Url.Action("Login","Inicio")">Ya tienes una cuenta? Inicia sesion</a>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    }
+                    else
+                    {
+                        <div class="alert-success">
+                            <p>@ViewBag.Mensaje</p>
+                            <a class="btn btn-success" href="@Url.Action("Inicio","Login")">Ingresar</a>
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="@Url.Content("~/Scripts/validaciones.js")"></script>
+</body>
+</html>
